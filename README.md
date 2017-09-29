@@ -1,6 +1,7 @@
 # Make Change Project
 
 ## By Jacob Simms
+## September 2017
 
 First week project for Skill Distillery.
 Demonstrates:
