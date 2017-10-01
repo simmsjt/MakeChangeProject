@@ -29,10 +29,10 @@ public class MakeChange {
 	public static int amountChange(int price, int tender) {
 		 //find the amount of change
 		int change = tender -  price;
-		System.out.println(change);
 		return change;
 	}
 	
+	//public static void 
 	public static void billsNCoins(int total){
 		//printout for bills and coins
 		int hundreds,twentys,tens,fives
@@ -56,35 +56,81 @@ public class MakeChange {
 		total = total % 5;
 		pennys = total;
 		
+		boolean firstStatement = true;
 		if(hundreds > 0) {
-			System.out.print(hundreds + " hundred dollar bill, ");
+			if(firstStatement) {
+				firstStatement = false;
+			}else {
+				System.out.print(",");
+			}
+			System.out.print(" " + hundreds + " hundred dollar bill");
 		}
 		if(twentys > 0) {
-			System.out.print(hundreds + " twenty dollar bill, ");
+			if(firstStatement) {
+				firstStatement = false;
+			}else {
+				System.out.print(",");
+			}
+			System.out.print(" " + twentys + " twenty dollar bill ");
 		}
 		if(tens > 0) {
-			System.out.print(hundreds + " ten dollar bill, ");
+			if(firstStatement) {
+				firstStatement = false;
+			}else {
+				System.out.print(",");
+			}
+			System.out.print(" " + tens + " ten dollar bill ");
 		}
 		if(fives > 0) {
-			System.out.print(hundreds + " five dollar bill, ");
+			if(firstStatement) {
+				firstStatement = false;
+			}else {
+				System.out.print(",");
+			} 
+			System.out.print(" " + fives + " five dollar bill ");
 		}
 		if(ones > 0) {
-			System.out.print(hundreds + " one dollar bill, ");
+			if(firstStatement) {
+				firstStatement = false;
+			}else {
+				System.out.print(",");
+			}
+			System.out.print(" " + ones + " one dollar bill ");
 		}
 		if(quarters > 0) {
-			System.out.print(hundreds + " quarters, ");
+			if(firstStatement) {
+				firstStatement = false;
+			}else {
+				System.out.print(",");
+			}
+			System.out.print(" " + quarters + " quarters");
 		}
 		if(dimes > 0) {
-			System.out.print(hundreds + " dimes, ");
+			if(firstStatement) {
+				firstStatement = false;
+			}else {
+				System.out.print(",");
+			}
+			System.out.print(" " + dimes + " dimes");
 		}
 		if(nickels > 0) {
-			System.out.print(hundreds + " nickels, ");
+			if(firstStatement) {
+				firstStatement = false;
+			}else {
+				System.out.print(",");
+			}
+			System.out.print(" " + nickels + " nickels");
 		}
 		if(pennys > 0) {
-			System.out.print(hundreds + " pennys, ");
+			if(firstStatement) {
+				firstStatement = false;
+			}else {
+				System.out.print(",");
+			}
+			System.out.print(" " + pennys + " pennys");
 		}
 		
-		
+		System.out.println(".");
 	}
 	
 	public static int doubleToInt(double input) {
