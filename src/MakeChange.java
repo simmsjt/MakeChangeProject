@@ -1,14 +1,15 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class MakeChange {
 	public static Scanner sc = new Scanner(System.in);
 	
 	public static void main(String[] args) {
-			tempMeth();
+			//tempMeth();
+			run();
 	}
 	
-	public static void tempMeth() {
-		//temporary method will testing functionallity
+	public static void run() {
 		int price = doubleToInt(askPrice());
 		int tender = doubleToInt(askTender());
 		moneyChecker(price,tender);
@@ -141,12 +142,35 @@ public class MakeChange {
 	
 	public static double askPrice() {
 		System.out.print("Ask for the price of the item: ");
-		return sc.nextDouble();
+		return inputFormat();
 	}
 	
 	public static double askTender() {
 		System.out.println("How much money was tendered?");
-		return sc.nextDouble();
+		return inputFormat();
+	}
+	
+	public static double inputFormat() {
+		boolean flag = false;
+		double input = 0;
+		while(!flag){
+			
+	         try {
+	            input = sc.nextDouble();
+	            flag = true;
+	            break;
+	         }
+
+	         catch (InputMismatchException e) {
+	             System.out.println("Wrong entry! Format like this \" 20.12 \"");
+	             sc.next();
+	         }
+	   
+	     }
+		
+		return input;
+		
+		
 	}
 	
 	
